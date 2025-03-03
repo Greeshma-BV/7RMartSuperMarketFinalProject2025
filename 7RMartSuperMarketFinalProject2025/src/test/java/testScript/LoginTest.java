@@ -11,6 +11,7 @@ import automationCore.Base;
 import constants.Messages;
 import pages.LoginPage;
 import utilities.ExcelUtility;
+import utilities.WaitUtility;
 
 public class LoginTest extends Base {
 	@Test(priority = 4, description = "Verification of user login with valid credentials")
@@ -26,8 +27,10 @@ public class LoginTest extends Base {
 		Assert.assertEquals(actual, expected, Messages.LOGINFAILED);
 	}
 
-	@Test(priority = 1, description = "Verification of user login with valid username and invalid password")
+	@Test(priority = 1, description = "Verification of user login with valid username and invalid password",groups = {"smoke"})
 	public void verifyUserLoginWithValidUsernameAndInValidPassword() throws IOException {
+		//WaitUtility wait=new WaitUtility();
+		//wait.waitForElementToVisible(driver, usernamefield);
 		String username = ExcelUtility.readStringData(2, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(2, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
@@ -38,7 +41,7 @@ public class LoginTest extends Base {
 
 	}
 
-	@Test(priority = 2, description = "Verification of user login with invalid username and valid password")
+	@Test(priority = 2, description = "Verification of user login with invalid username and valid password",groups = {"smoke"})
 	public void verifyUserLoginWithInValidUsernameAndValidPassword() throws IOException {
 		String username = ExcelUtility.readStringData(3, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(3, 1, "LoginPage");
@@ -50,7 +53,7 @@ public class LoginTest extends Base {
 
 	}
 
-	@Test(priority = 3, description = "Verification of user login with invalid username and password")
+	@Test(priority = 3, description = "Verification of user login with invalid username and password",retryAnalyzer = retry.Retry.class)
 	public void verifyUserLoginWithInValidUsernameAndInValidPassword() throws IOException {
 		String username = ExcelUtility.readStringData(4, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(4, 1, "LoginPage");

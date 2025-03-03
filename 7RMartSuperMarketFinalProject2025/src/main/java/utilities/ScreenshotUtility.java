@@ -13,10 +13,10 @@ public class ScreenshotUtility {
 	public void getScreenshot(WebDriver driver,String failedTestCase) throws IOException
 	{
 		TakesScreenshot scrShot = (TakesScreenshot) driver;
-		File screenShot = scrShot.getScreenshotAs(OutputType.FILE);//get screenshot and store in a particular location
+		File screenShot = scrShot.getScreenshotAs(OutputType.FILE);//capture the screenshot store in a file variable
 		
 		String timeStamp = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(new Date());
-		File f1 = new File(System.getProperty("user.dir") + "//OutputScreenShot");
+		File f1 = new File(System.getProperty("user.dir") + "//OutputScreenShot");//create a folder in the project user directory with name Outputscreenshot
 		if (!f1.exists()) {
 			f1.mkdirs();
 		}
