@@ -18,15 +18,10 @@ public class ManageNewsTest extends Base {
 		String username = ExcelUtility.readStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickOnSigninButton();
+		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickOnSigninButton();
 		String newnews = ExcelUtility.readStringData(1, 0, "ManageNewsPage");
 		ManageNewsPage managenewspage = new ManageNewsPage(driver);
-		managenewspage.clickManageNewsMenu();
-		managenewspage.clickNewButton();
-		managenewspage.enterAddNews(newnews);
-		managenewspage.clickSaveNewsButton();
+		managenewspage.clickManageNewsMenu().clickNewButton().enterAddNews(newnews).clickSaveNewsButton();
 		boolean isAltertshowingForManageNews=managenewspage.IsAlertDisplayed();
 		Assert.assertTrue(isAltertshowingForManageNews,Messages.NEWSCREATFAILED);
 	}

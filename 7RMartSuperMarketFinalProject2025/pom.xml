@@ -5,6 +5,51 @@
 	<groupId>com.obsqura</groupId>
 	<artifactId>7RMartFinalProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<build>
+		<plugins>
+
+			<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId> <!-- maven
+				execution-->
+
+				<artifactId>maven-compiler-plugin</artifactId>
+
+				<version>3.8.1</version>
+
+				<configuration>
+
+					<source>1.8</source>
+
+					<target>1.8</target>
+
+				</configuration>
+
+			</plugin>
+
+			<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId>  <!-- maven
+				execution-->
+
+				<artifactId>maven-surefire-plugin</artifactId>
+
+				<version>3.0.0</version>
+
+				<configuration>
+
+					<suiteXmlFiles>
+
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+
+					</suiteXmlFiles>
+
+				</configuration>
+
+			</plugin>
+
+		</plugins>
+	</build>
 	<!--
 	https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 	<dependencies>
@@ -31,14 +76,20 @@
 			<version>5.2.5</version>
 		</dependency>
 		<dependency>
-	<groupId>com.aventstack</groupId>
-	<artifactId>extentreports</artifactId>
-	<version>5.0.9</version>
-</dependency>
-<dependency>
-    <groupId>com.github.javafaker</groupId>
-    <artifactId>javafaker</artifactId>
-    <version>0.15</version>
-</dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.9</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>0.15</version>
+		</dependency>
+		<dependency>
+	  <groupId>org.projectlombok</groupId>
+	  <artifactId>lombok</artifactId>
+	  <version>1.18.22</version>
+	</dependency>
 	</dependencies>
+
 </project>

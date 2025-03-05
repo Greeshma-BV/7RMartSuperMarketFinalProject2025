@@ -66,17 +66,11 @@ public class SubcategoryTest extends Base {
 		String username = ExcelUtility.readStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickOnSigninButton();
+		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickOnSigninButton();
 		SubcategoryPage subcategorypage = new SubcategoryPage(driver);
-		subcategorypage.selectSubCategory();
-		subcategorypage.clickOnSearchBtnInTheSubCategoryPage();
-		subcategorypage.selectSubCategoryFromTheDropdown();
+		subcategorypage.selectSubCategory().clickOnSearchBtnInTheSubCategoryPage().selectSubCategoryFromTheDropdown();
 		String searchsubcategory=ExcelUtility.readStringData(1, 1, "SubCategoryPage");
-		subcategorypage.enterTheSubCategoryName(searchsubcategory);
-		subcategorypage.clickSearchBtnAfterFillingTheDetails();
-		subcategorypage.clickOnTheResetButton();
+		subcategorypage.enterTheSubCategoryName(searchsubcategory).clickSearchBtnAfterFillingTheDetails().clickOnTheResetButton();
 		boolean assertReset=subcategorypage.isRestWorking();
 		Assert.assertFalse(assertReset, Messages.RESETFAILED);
 	}

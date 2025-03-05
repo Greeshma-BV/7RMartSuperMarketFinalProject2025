@@ -12,9 +12,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import constants.Constants;
+import utilities.PageUtility;
+
 public class SubcategoryPage {
 	public WebDriver driver;
-
+	PageUtility pageutility=new PageUtility();
 	public SubcategoryPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -48,35 +51,38 @@ public class SubcategoryPage {
 	@FindBy(xpath="(//div[@class='row'])[2]")
 	private WebElement resetAssert;
 	
-	public void selectSubCategory() {
+	public SubcategoryPage selectSubCategory() {
 		subcategoryclick.click();
+		return this;
 
 	}
 
-	public void clickOnNewBtnOnTheSubCategoryPage() {
+	public SubcategoryPage clickOnNewBtnOnTheSubCategoryPage() {
 		newbuttonclick.click();
+		return this;
 	}
 
-	public void selectCategoryFromDropdown() {
-		Select categorydropdown = new Select(category);
-		categorydropdown.selectByVisibleText("Vegetables");
+	public SubcategoryPage selectCategoryFromDropdown() {
+		pageutility.SelectValueWithVisibleText(category, "Vegetables");
+		return this;
 	}
 
-	public void enterSubCategoryName(String subcategory) {
+	public SubcategoryPage enterSubCategoryName(String subcategory) {
 		txt_subcategory.sendKeys(subcategory);
+		return this;
 	}
 
-	public void uploadImage() {
-		choosefile.sendKeys(
-				"C:\\Users\\grees\\eclipse-workspace\\7RMartFinalProject2\\src\\test\\resources\\leafyVegitable.jpg");
-
+	public SubcategoryPage uploadImage() {
+		choosefile.sendKeys(Constants.IMAGEFILE);
+		return this;
 	}
 
-	public void clickOnSaveBtnInTheSubCategoryPage() {
+	public SubcategoryPage clickOnSaveBtnInTheSubCategoryPage() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(buttonsave));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", buttonsave);
+		return this;
 		
 	}
 	public  boolean AlertIsDisplayedSubCategoryCreation()
@@ -84,21 +90,25 @@ public class SubcategoryPage {
 		return alertSubCategory.isDisplayed();
 	}
 
-	public void clickOnSearchBtnInTheSubCategoryPage() {
+	public SubcategoryPage clickOnSearchBtnInTheSubCategoryPage() {
 		subcategorysearch.click();
+		return this;
 	}
 
-	public void selectSubCategoryFromTheDropdown() {
-		Select searchcategorydrpdown = new Select(searchcategory);
-		searchcategorydrpdown.selectByVisibleText("Toys");
+	public SubcategoryPage selectSubCategoryFromTheDropdown() {
+		pageutility.SelectValueWithVisibleText(searchcategory, "Toys");
+		return this;
+
 	}
 
-	public void enterTheSubCategoryName(String searchsubcategory) {
+	public SubcategoryPage enterTheSubCategoryName(String searchsubcategory) {
 		txt_searchsubcategory.sendKeys(searchsubcategory);// "SOFT TOYS190225100824"
+		return this;
 	}
 
-	public void clickSearchBtnAfterFillingTheDetails() {
+	public SubcategoryPage clickSearchBtnAfterFillingTheDetails() {
 		searchbuttonclick.click();
+		return this;
 
 	}
 	public boolean isTableDisplayed()
@@ -106,9 +116,10 @@ public class SubcategoryPage {
 		return resultTable.isDisplayed();
 	}
 	
-	public void clickOnTheResetButton()
+	public SubcategoryPage clickOnTheResetButton()
 	{
 		btn_Reset.click();
+		return this;
 	}
 	public boolean isRestWorking()
 	{

@@ -15,8 +15,7 @@ public class AdminUserPage {
 	}
 	@FindBy(xpath = "(//a[@class='nav-link'])[10]")
 	private WebElement adminuser;
-	@FindBy(xpath = "//p[text()='Manage Users']")
-	private WebElement manageuser;
+	
 	@FindBy(xpath = "//*[text()=' New']")
 	private WebElement btn_Newuser;
 	@FindBy(id = "username")
@@ -34,35 +33,38 @@ public class AdminUserPage {
 	@FindBy(xpath="//*[text()=' Reset']")private WebElement btn_mainReset;
 	@FindBy(xpath="//*[@class='alert alert-success alert-dismissible']") 
 	private WebElement alert;
-	public void clickAdminUser() {
+	public HomePage clickAdminUser() {
 		adminuser.click();
+		return new HomePage(driver);
 	}
 
-	public void clickManageUser() {
-		manageuser.click();
-	}
+	
 
-	public void clickNewButton() {
+	public AdminUserPage clickNewButton() {
 		btn_Newuser.click();
+		return this;
 	}
 	public boolean isAlertDisplayed()
 	{
 		return alert.isDisplayed();
 	}
 
-	public void enterNewUsernameAndPassword(String newusername, String newpassword) {
+	public AdminUserPage enterNewUsernameAndPassword(String newusername, String newpassword) {
 		txt_newusername.sendKeys(newusername);
 		txt_password.sendKeys(newpassword);
+		return this;
 
 	}
 
-	public void selectUserTypeFromDropdown() {
+	public AdminUserPage selectUserTypeFromDropdown() {
 		Select select = new Select(drpdwn_usertype);
 		select.selectByVisibleText("Staff");
+		return this;
 	}
 
-	public void clickSaveButton() {
+	public AdminUserPage clickSaveButton() {
 		btn_save.click();
+		return this;
 	}
 
 }

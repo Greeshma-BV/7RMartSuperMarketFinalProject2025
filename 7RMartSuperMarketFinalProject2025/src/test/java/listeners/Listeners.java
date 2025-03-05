@@ -19,7 +19,7 @@ public class Listeners extends Base implements ITestListener {
 
 	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
-	public void onTestStart(ITestResult result) {
+	public void onTestStart(ITestResult result) {//invoke each time before a test invoked
 
 		ITestListener.super.onTestStart(result);
 
@@ -29,7 +29,7 @@ public class Listeners extends Base implements ITestListener {
 
 	}
 
-	public void onTestSuccess(ITestResult result) {
+	public void onTestSuccess(ITestResult result) {//invoke each time a test passed
 
 		ITestListener.super.onTestSuccess(result);
 
@@ -37,7 +37,7 @@ public class Listeners extends Base implements ITestListener {
 
 	}
 
-	public void onTestFailure(ITestResult result) {
+	public void onTestFailure(ITestResult result) {//invoke each time a test fails
 
 		ITestListener.super.onTestFailure(result);
 
@@ -85,7 +85,7 @@ public class Listeners extends Base implements ITestListener {
 
 	}
 
-	public void onTestSkipped(ITestResult result) {
+	public void onTestSkipped(ITestResult result) {//invoke each time a test skipped
 
 		ITestListener.super.onTestSkipped(result);
 

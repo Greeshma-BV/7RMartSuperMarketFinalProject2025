@@ -19,19 +19,13 @@ public class AdminUserTest extends Base {
 		String username = ExcelUtility.readStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickOnSigninButton();
+		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickOnSigninButton();
 		AdminUserPage adminuserpage = new AdminUserPage(driver);
-		adminuserpage.clickAdminUser();
-		adminuserpage.clickManageUser();
-		adminuserpage.clickNewButton();
+		adminuserpage.clickAdminUser().clickManageUser().clickNewButton();
 		FakerUtility faker=new FakerUtility();
 		String newusername = faker.createUsername();
 		String newpassword = faker.createPassword();
-		adminuserpage.enterNewUsernameAndPassword(newusername, newpassword);
-		adminuserpage.selectUserTypeFromDropdown();
-		adminuserpage.clickSaveButton();
+		adminuserpage.enterNewUsernameAndPassword(newusername, newpassword).selectUserTypeFromDropdown().clickSaveButton();
 		boolean isAlertCheck=adminuserpage.isAlertDisplayed();
 		Assert.assertTrue(isAlertCheck,Messages.NEWUSERCREATIONFAILED);
 	}

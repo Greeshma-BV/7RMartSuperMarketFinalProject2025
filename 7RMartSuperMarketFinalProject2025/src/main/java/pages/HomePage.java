@@ -22,18 +22,26 @@ public class HomePage {
 	private WebElement logoutclick;
 	@FindBy(xpath = "//*[@type='submit']")
 	private WebElement signinbuttonclick;
+	@FindBy(xpath = "//p[text()='Manage Users']")
+	private WebElement manageuser;
 	
 
-	public void clickOnadminButton() {
+	public HomePage clickOnadminButton() {
 		adminclick.click();
+		return this;
 	}
-	public void clickOnLogoutButton()
+	public LoginPage clickOnLogoutButton()
 	{
 		logoutclick.click();
+		return new LoginPage(driver);
 	}
 	public boolean isSignInButtonDisplayed()
 	{
 		return signinbuttonclick.isDisplayed();
+	}
+	public AdminUserPage clickManageUser() {
+		manageuser.click();
+		return new AdminUserPage(driver);
 	}
 	
 	

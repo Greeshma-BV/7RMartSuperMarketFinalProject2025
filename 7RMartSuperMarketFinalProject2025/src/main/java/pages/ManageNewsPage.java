@@ -15,29 +15,34 @@ public class ManageNewsPage {
 	@FindBy(xpath = "//p[text()='Manage News']")
 	private WebElement managenews;
 
-	public void clickManageNewsMenu() {
+	public ManageNewsPage clickManageNewsMenu() {
 		managenews.click();
+		return this;
+		
 	}
 
 	@FindBy(xpath = "//*[text()=' New']")
 	private WebElement btn_addnewNews;
 
-	public void clickNewButton() {
+	public ManageNewsPage clickNewButton() {
 		btn_addnewNews.click();
+		return this;
 	}
 
 	@FindBy(xpath = "//*[@id='news']")
 	WebElement txt_addnewnews;
 
-	public void enterAddNews(String newnews) {
+	public ManageNewsPage enterAddNews(String newnews) {
 		txt_addnewnews.sendKeys(newnews);
+		return this;
 	}
 
 	@FindBy(xpath = "//*[@name='create']")
 	WebElement btn_saveNews;
 
-	public void clickSaveNewsButton() {
+	public ManageNewsPage clickSaveNewsButton() {
 		btn_saveNews.click();
+		return this;
 	}
 	@FindBy(xpath="//*[text()=' Alert!']")
 	private WebElement alert_MagaenewsCreate;

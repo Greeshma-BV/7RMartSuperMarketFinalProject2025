@@ -19,16 +19,9 @@ public class HomeTest extends Base {
 		String username = ExcelUtility.readStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickOnSigninButton();
+		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickOnSigninButton();
 		HomePage homepage=new HomePage(driver);
-		homepage.clickOnadminButton();
-		homepage.clickOnLogoutButton();
-		
-		/*String actualresult=homepage.getTextFromTitle();
-		String expectedresult="7rmart supermarket";
-		Assert.assertEquals(actualresult, expectedresult,"Logout failed");*/
+		homepage.clickOnadminButton().clickOnLogoutButton();
 		boolean isSignInButtonDisplayed=homepage.isSignInButtonDisplayed();
 		Assert.assertTrue(isSignInButtonDisplayed, Messages.LOGOUTFAILED);
 		
