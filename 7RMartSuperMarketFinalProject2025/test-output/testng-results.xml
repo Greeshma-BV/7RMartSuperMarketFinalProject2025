@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-05T19:27:34 IST" name="Suite" finished-at="2025-03-05T19:27:39 IST" duration-ms="4350">
+  <suite started-at="2025-03-06T11:09:05 IST" name="Suite" finished-at="2025-03-06T11:09:12 IST" duration-ms="7068">
     <groups>
     </groups>
-    <test started-at="2025-03-05T19:27:34 IST" name="Test" finished-at="2025-03-05T19:27:39 IST" duration-ms="4350">
-      <class name="testScript.LoginTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.LoginTest@3aa078fd]" started-at="2025-03-05T19:27:35 IST" name="initializeBrowser" finished-at="2025-03-05T19:27:38 IST" duration-ms="2931" status="PASS">
+    <test started-at="2025-03-06T11:09:05 IST" name="Test" finished-at="2025-03-06T11:09:12 IST" duration-ms="7068">
+      <class name="testScript.AdminUserTest">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.AdminUserTest@4b8729ff]" started-at="2025-03-06T11:09:05 IST" name="initializeBrowser" finished-at="2025-03-06T11:09:09 IST" duration-ms="3494" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,34 +18,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyUserLoginWithInValidUsernameAndInValidPassword(java.lang.String,java.lang.String)[pri:3, instance:testScript.LoginTest@3aa078fd]" started-at="2025-03-05T19:27:38 IST" name="verifyUserLoginWithInValidUsernameAndInValidPassword" description="Verification of user login with invalid username and password" data-provider="loginProvider" finished-at="2025-03-05T19:27:39 IST" duration-ms="561" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[adminkl123]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="VerifyUserCanAddNewAdminUser()[pri:1, instance:testScript.AdminUserTest@4b8729ff]" started-at="2025-03-06T11:09:09 IST" name="VerifyUserCanAddNewAdminUser" description="Add new user to the admin usr page" finished-at="2025-03-06T11:09:12 IST" duration-ms="3521" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserLoginWithInValidUsernameAndInValidPassword -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.LoginTest@3aa078fd]" started-at="2025-03-05T19:27:39 IST" name="driverQuit" finished-at="2025-03-05T19:27:39 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- VerifyUserCanAddNewAdminUser -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.AdminUserTest@4b8729ff]" started-at="2025-03-06T11:09:12 IST" name="driverQuit" finished-at="2025-03-06T11:09:12 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyUserLoginWithInValidUsernameAndInValidPassword status=SUCCESS method=LoginTest.verifyUserLoginWithInValidUsernameAndInValidPassword(java.lang.String,java.lang.String)[pri:3, instance:testScript.LoginTest@3aa078fd] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyUserCanAddNewAdminUser status=SUCCESS method=AdminUserTest.VerifyUserCanAddNewAdminUser()[pri:1, instance:testScript.AdminUserTest@4b8729ff] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-      </class> <!-- testScript.LoginTest -->
+      </class> <!-- testScript.AdminUserTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
