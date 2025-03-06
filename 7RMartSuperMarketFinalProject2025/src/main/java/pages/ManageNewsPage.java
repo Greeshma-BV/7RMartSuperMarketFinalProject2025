@@ -12,13 +12,14 @@ public class ManageNewsPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+
 	@FindBy(xpath = "//p[text()='Manage News']")
 	private WebElement managenews;
 
 	public ManageNewsPage clickManageNewsMenu() {
 		managenews.click();
 		return this;
-		
+
 	}
 
 	@FindBy(xpath = "//*[text()=' New']")
@@ -44,10 +45,11 @@ public class ManageNewsPage {
 		btn_saveNews.click();
 		return this;
 	}
-	@FindBy(xpath="//*[text()=' Alert!']")
+
+	@FindBy(xpath = "//*[text()=' Alert!']")
 	private WebElement alert_MagaenewsCreate;
-	public boolean IsAlertDisplayed()
-	{
+
+	public boolean IsAlertDisplayed() {
 		return alert_MagaenewsCreate.isDisplayed();
 	}
 }

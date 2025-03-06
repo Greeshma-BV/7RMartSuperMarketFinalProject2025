@@ -11,19 +11,12 @@
     <classes>
       <class name="testScript.LoginTest">
         <methods>
+          <include name="initializeBrowser"/>
+          <include name="driverQuit"/>
+          <include name="verifyUserLoginWithInValidUsernameAndValidPassword"/>
           <include name="verifyUserLoginWithValidUsernameAndInValidPassword"/>
         </methods>
       </class> <!-- testScript.LoginTest -->
-      <class name="testScript.ManageNewsTest">
-        <methods>
-          <include name="verifyUserAbleToAddNewNews"/>
-        </methods>
-      </class> <!-- testScript.ManageNewsTest -->
-      <class name="testScript.HomeTest">
-        <methods>
-          <include name="verifyUserAbleToLogout"/>
-        </methods>
-      </class> <!-- testScript.HomeTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Grouping] -->

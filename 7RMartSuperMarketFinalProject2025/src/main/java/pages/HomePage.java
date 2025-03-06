@@ -16,6 +16,7 @@ public class HomePage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+
 	@FindBy(linkText = "Admin")
 	private WebElement adminclick;
 	@FindBy(linkText = "Logout")
@@ -24,26 +25,24 @@ public class HomePage {
 	private WebElement signinbuttonclick;
 	@FindBy(xpath = "//p[text()='Manage Users']")
 	private WebElement manageuser;
-	
 
 	public HomePage clickOnadminButton() {
 		adminclick.click();
 		return this;
 	}
-	public LoginPage clickOnLogoutButton()
-	{
+
+	public LoginPage clickOnLogoutButton() {
 		logoutclick.click();
 		return new LoginPage(driver);
 	}
-	public boolean isSignInButtonDisplayed()
-	{
+
+	public boolean isSignInButtonDisplayed() {
 		return signinbuttonclick.isDisplayed();
 	}
+
 	public AdminUserPage clickManageUser() {
 		manageuser.click();
 		return new AdminUserPage(driver);
 	}
-	
-	
 
 }

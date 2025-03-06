@@ -10,15 +10,16 @@ import utilities.PageUtility;
 
 public class AdminUserPage {
 	public WebDriver driver;
-	PageUtility pageutility=new PageUtility();
+	PageUtility pageutility = new PageUtility();
 
 	public AdminUserPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+
 	@FindBy(xpath = "(//a[@class='nav-link'])[10]")
 	private WebElement adminuser;
-	
+
 	@FindBy(xpath = "//*[text()=' New']")
 	private WebElement btn_Newuser;
 	@FindBy(id = "username")
@@ -29,26 +30,30 @@ public class AdminUserPage {
 	private WebElement drpdwn_usertype;
 	@FindBy(name = "Create")
 	private WebElement btn_save;
-	@FindBy(xpath="//*[text()=' Search']")private WebElement btnSearchUser;
-	@FindBy(xpath="//input[@class='form-control'][@id='un']")private WebElement txt_existinguser;
-	@FindBy(xpath="//select[@id='ut']") private WebElement drp_existingusertype;
-	@FindBy(xpath="//button[@name='Search']")private WebElement btn_search;
-	@FindBy(xpath="//*[text()=' Reset']")private WebElement btn_mainReset;
-	@FindBy(xpath="//*[@class='alert alert-success alert-dismissible']") 
+	@FindBy(xpath = "//*[text()=' Search']")
+	private WebElement btnSearchUser;
+	@FindBy(xpath = "//input[@class='form-control'][@id='un']")
+	private WebElement txt_existinguser;
+	@FindBy(xpath = "//select[@id='ut']")
+	private WebElement drp_existingusertype;
+	@FindBy(xpath = "//button[@name='Search']")
+	private WebElement btn_search;
+	@FindBy(xpath = "//*[text()=' Reset']")
+	private WebElement btn_mainReset;
+	@FindBy(xpath = "//*[@class='alert alert-success alert-dismissible']")
 	private WebElement alert;
+
 	public HomePage clickAdminUser() {
 		adminuser.click();
 		return new HomePage(driver);
 	}
 
-	
-
 	public AdminUserPage clickNewButton() {
 		btn_Newuser.click();
 		return this;
 	}
-	public boolean isAlertDisplayed()
-	{
+
+	public boolean isAlertDisplayed() {
 		return alert.isDisplayed();
 	}
 
@@ -56,7 +61,6 @@ public class AdminUserPage {
 		txt_newusername.sendKeys(newusername);
 		txt_password.sendKeys(newpassword);
 		return this;
-
 	}
 
 	public AdminUserPage selectUserTypeFromDropdown() {

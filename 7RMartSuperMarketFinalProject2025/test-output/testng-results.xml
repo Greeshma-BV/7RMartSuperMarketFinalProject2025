@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-06T11:09:05 IST" name="Suite" finished-at="2025-03-06T11:09:12 IST" duration-ms="7068">
+  <suite started-at="2025-03-06T18:53:23 IST" name="Suite" finished-at="2025-03-06T18:53:30 IST" duration-ms="6720">
     <groups>
     </groups>
-    <test started-at="2025-03-06T11:09:05 IST" name="Test" finished-at="2025-03-06T11:09:12 IST" duration-ms="7068">
+    <test started-at="2025-03-06T18:53:23 IST" name="Test" finished-at="2025-03-06T18:53:30 IST" duration-ms="6720">
       <class name="testScript.AdminUserTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.AdminUserTest@4b8729ff]" started-at="2025-03-06T11:09:05 IST" name="initializeBrowser" finished-at="2025-03-06T11:09:09 IST" duration-ms="3494" status="PASS">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.AdminUserTest@7139992f]" started-at="2025-03-06T18:53:23 IST" name="initializeBrowser" finished-at="2025-03-06T18:53:26 IST" duration-ms="2710" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="VerifyUserCanAddNewAdminUser()[pri:1, instance:testScript.AdminUserTest@4b8729ff]" started-at="2025-03-06T11:09:09 IST" name="VerifyUserCanAddNewAdminUser" description="Add new user to the admin usr page" finished-at="2025-03-06T11:09:12 IST" duration-ms="3521" status="PASS">
+        <test-method signature="VerifyUserCanAddNewAdminUser()[pri:1, instance:testScript.AdminUserTest@7139992f]" started-at="2025-03-06T18:53:26 IST" name="VerifyUserCanAddNewAdminUser" description="Add new user to the admin usr page" finished-at="2025-03-06T18:53:30 IST" duration-ms="3949" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyUserCanAddNewAdminUser -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.AdminUserTest@4b8729ff]" started-at="2025-03-06T11:09:12 IST" name="driverQuit" finished-at="2025-03-06T11:09:12 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.AdminUserTest@7139992f]" started-at="2025-03-06T18:53:30 IST" name="driverQuit" finished-at="2025-03-06T18:53:30 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=VerifyUserCanAddNewAdminUser status=SUCCESS method=AdminUserTest.VerifyUserCanAddNewAdminUser()[pri:1, instance:testScript.AdminUserTest@4b8729ff] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyUserCanAddNewAdminUser status=SUCCESS method=AdminUserTest.VerifyUserCanAddNewAdminUser()[pri:1, instance:testScript.AdminUserTest@7139992f] output={null}]]]>
               </value>
             </param>
           </params>

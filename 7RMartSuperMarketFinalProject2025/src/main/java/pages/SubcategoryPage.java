@@ -17,11 +17,13 @@ import utilities.PageUtility;
 
 public class SubcategoryPage {
 	public WebDriver driver;
-	PageUtility pageutility=new PageUtility();
+	PageUtility pageutility = new PageUtility();
+
 	public SubcategoryPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+
 	@FindBy(xpath = "(//p[text()='Sub Category'])[1]")
 	private WebElement subcategoryclick;
 	@FindBy(xpath = "//a[@onclick='click_button(1)']")
@@ -42,15 +44,15 @@ public class SubcategoryPage {
 	private WebElement txt_searchsubcategory;
 	@FindBy(name = "Search")
 	private WebElement searchbuttonclick;
-	@FindBy(xpath="//*[text()=' Reset']")
+	@FindBy(xpath = "//*[text()=' Reset']")
 	private WebElement btn_Reset;
-	@FindBy(xpath="//*[text()=' Alert!']")
+	@FindBy(xpath = "//*[text()=' Alert!']")
 	private WebElement alertSubCategory;
-	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']/tbody/tr/td")
+	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']/tbody/tr/td")
 	private WebElement resultTable;
-	@FindBy(xpath="(//div[@class='row'])[2]")
+	@FindBy(xpath = "(//div[@class='row'])[2]")
 	private WebElement resetAssert;
-	
+
 	public SubcategoryPage selectSubCategory() {
 		subcategoryclick.click();
 		return this;
@@ -83,10 +85,10 @@ public class SubcategoryPage {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", buttonsave);
 		return this;
-		
+
 	}
-	public  boolean AlertIsDisplayedSubCategoryCreation()
-	{
+
+	public boolean AlertIsDisplayedSubCategoryCreation() {
 		return alertSubCategory.isDisplayed();
 	}
 
@@ -111,18 +113,17 @@ public class SubcategoryPage {
 		return this;
 
 	}
-	public boolean isTableDisplayed()
-	{
+
+	public boolean isTableDisplayed() {
 		return resultTable.isDisplayed();
 	}
-	
-	public SubcategoryPage clickOnTheResetButton()
-	{
+
+	public SubcategoryPage clickOnTheResetButton() {
 		btn_Reset.click();
 		return this;
 	}
-	public boolean isRestWorking()
-	{
+
+	public boolean isRestWorking() {
 		return resetAssert.isDisplayed();
 	}
 
