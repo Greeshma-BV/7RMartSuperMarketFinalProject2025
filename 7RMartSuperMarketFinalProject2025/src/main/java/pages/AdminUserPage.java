@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import constants.Constants;
 import utilities.PageUtility;
 
 public class AdminUserPage {
@@ -64,7 +65,7 @@ public class AdminUserPage {
 	}
 
 	public AdminUserPage selectUserTypeFromDropdown() {
-		pageutility.SelectValueWithVisibleText(drpdwn_usertype, "Staff");
+		pageutility.SelectValueWithVisibleText(drpdwn_usertype, Constants.DROPDOWNVAL1);
 		return this;
 	}
 

@@ -98,7 +98,8 @@ public class SubcategoryPage {
 	}
 
 	public SubcategoryPage selectSubCategoryFromTheDropdown() {
-		pageutility.SelectValueWithVisibleText(searchcategory, "Toys");
+		
+		pageutility.SelectValueWithVisibleText(searchcategory, Constants.SEARCHCATEGORYDROP);
 		return this;
 
 	}
