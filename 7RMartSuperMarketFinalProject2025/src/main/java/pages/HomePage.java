@@ -25,6 +25,10 @@ public class HomePage {
 	private WebElement signinbuttonclick;
 	@FindBy(xpath = "//p[text()='Manage Users']")
 	private WebElement manageuser;
+	@FindBy(xpath = "//p[text()='Manage News']")
+	private WebElement managenews;
+	@FindBy(xpath = "(//p[text()='Sub Category'])[1]")
+	private WebElement subcategoryclick;
 
 	public HomePage clickOnadminButton() {
 		adminclick.click();
@@ -43,6 +47,16 @@ public class HomePage {
 	public AdminUserPage clickManageUser() {
 		manageuser.click();
 		return new AdminUserPage(driver);
+	}
+	public ManageNewsPage clickManageNewsMenu() {
+		managenews.click();
+		return new ManageNewsPage(driver);
+
+	}
+	public SubcategoryPage selectSubCategory() {
+		subcategoryclick.click();
+		return new SubcategoryPage(driver);
+
 	}
 
 }

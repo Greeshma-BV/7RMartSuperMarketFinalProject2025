@@ -52,6 +52,6 @@ public class Base {
 			ScreenshotUtility screenShot = new ScreenshotUtility();
 			screenShot.getScreenshot(driver, itestresult.getName());
 		}
-		//driver.quit();
+		driver.quit();
 	}
 }

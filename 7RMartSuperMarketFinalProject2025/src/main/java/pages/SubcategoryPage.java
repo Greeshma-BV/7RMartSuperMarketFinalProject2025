@@ -24,8 +24,7 @@ public class SubcategoryPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "(//p[text()='Sub Category'])[1]")
-	private WebElement subcategoryclick;
+	
 	@FindBy(xpath = "//a[@onclick='click_button(1)']")
 	private WebElement newbuttonclick;
 	@FindBy(id = "cat_id")
@@ -53,11 +52,7 @@ public class SubcategoryPage {
 	@FindBy(xpath = "(//div[@class='row'])[2]")
 	private WebElement resetAssert;
 
-	public SubcategoryPage selectSubCategory() {
-		subcategoryclick.click();
-		return this;
-
-	}
+	
 
 	public SubcategoryPage clickOnNewBtnOnTheSubCategoryPage() {
 		newbuttonclick.click();
@@ -80,12 +75,12 @@ public class SubcategoryPage {
 	}
 
 	public SubcategoryPage clickOnSaveBtnInTheSubCategoryPage() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeClickable(buttonsave));
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", buttonsave);
+		pageutility.ClickElementUsingJavaScriptExicuter(buttonsave, driver);
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		//wait.until(ExpectedConditions.elementToBeClickable(buttonsave));
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
+		//js.executeScript("arguments[0].click();", buttonsave);
 		return this;
-
 	}
 
 	public boolean AlertIsDisplayedSubCategoryCreation() {

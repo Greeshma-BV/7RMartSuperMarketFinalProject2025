@@ -15,23 +15,19 @@ public class LoginPage {
 
 	@FindBy(xpath = "//input[@name='username']")
 	private WebElement usernamefield;
+	@FindBy(xpath = "//input[@name='password']")
+	private WebElement passwordfield;
+	@FindBy(xpath = "//*[@type='submit']")
+	private WebElement signinbuttonclick;
 
 	public LoginPage enterUsernameOnUsernameField(String username) {
 		usernamefield.sendKeys(username);
 		return this;
 	}
-
-	@FindBy(xpath = "//input[@name='password']")
-	private WebElement passwordfield;
-
 	public LoginPage enterPasswordOnPasswordField(String password) {
 		passwordfield.sendKeys(password);
 		return this;
 	}
-
-	@FindBy(xpath = "//*[@type='submit']")
-	private WebElement signinbuttonclick;
-
 	public HomePage clickOnSigninButton() {
 		signinbuttonclick.click();
 		return new HomePage(driver);
